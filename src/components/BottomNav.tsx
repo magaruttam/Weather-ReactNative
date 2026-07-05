@@ -22,6 +22,7 @@ const BottomNav = () => {
                 </TouchableOpacity>
             </View>
             <View>
+            <TouchableOpacity onPress={() => navigation.navigate('Forecast')}>
                 <MaterialCommunityIcons
                     name="calendar"
                     size={30}
@@ -29,6 +30,7 @@ const BottomNav = () => {
                     style={styles.icon}
                 />
                 <Text style={styles.icontext}>Forecast</Text>
+                </TouchableOpacity>
             </View>
             <TouchableOpacity onPress={() => navigation.navigate('Search')}>
                 <MaterialCommunityIcons
