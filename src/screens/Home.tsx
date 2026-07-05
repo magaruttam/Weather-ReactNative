@@ -15,7 +15,7 @@ const Home = observer(() => {
 
   return (
     <SafeAreaView style={style.container}>
-      <Header />
+      <Header title="Weather"/>
       {weatherStore.loading && !weatherStore.weather ? (
         <View style={style.center}>
           <ActivityIndicator size="large" color="#5B7CFF" />
@@ -25,13 +25,15 @@ const Home = observer(() => {
           <Text style={style.errorText}>{weatherStore.error}</Text>
         </View>
       ) : (
-        <WeatherCard
+        <View style={{flex:1}}>
+          <WeatherCard
           city={weatherStore.city}
           country={weatherStore.country}
           weather={weatherStore.weather}
         />
+        </View>
       )}
-      <Highlights />
+        <Highlights />
       <BottomNav />
     </SafeAreaView>
   )

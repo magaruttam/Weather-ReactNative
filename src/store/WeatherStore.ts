@@ -1,4 +1,4 @@
-import { makeAutoObservable, runInAction } from 'mobx';
+import { flow, makeAutoObservable, runInAction } from 'mobx';
 import { SearchLocation } from '../api/locationApi';
 import { getWeather } from '../api/weatherApi';
 
@@ -13,12 +13,12 @@ class WeatherStore {
     makeAutoObservable(this);
   }
 
-  async fetchWeather(cityName: string) {
+   fetchWeather = flow(function* (cityName: string) {
     this.loading = true;
     this.error = null;
 
     try {
-      const locations = await SearchLocation(cityName);
+      const locations = yield SearchLocation(cityName);
       if (!locations || locations.length === 0) {
         runInAction(() => {
           this.error = 'Location not found';
@@ -28,7 +28,7 @@ class WeatherStore {
       }
 
       const { name, country, latitude, longitude } = locations[0];
-      const weatherData = await getWeather(latitude, longitude);
+      const weatherData = yield getWeather(latitude, longitude);
 
       runInAction(() => {
         this.city = name;
@@ -42,7 +42,7 @@ class WeatherStore {
         this.loading = false;
       });
     }
-  }
+  });
 }
 
 export const weatherStore = new WeatherStore();

@@ -2,7 +2,7 @@ import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 import Svg, { Path } from 'react-native-svg';
 
-const Header = () => {
+const Header = ({title}) => {
   return (
     <View style={style.container}>
       <View style={style.logo}>
@@ -12,7 +12,7 @@ const Header = () => {
             d="M32 400c0 79.5 64.5 144 144 144h304c70.7 0 128-57.3 128-128 0-51.6-30.5-96.1-74.5-116.3 6.7-13.1 10.5-28 10.5-43.7 0-53-43-96-96-96-17.7 0-34.2 4.8-48.4 13.1C375.5 127.3 327.4 96 272 96c-79.5 0-144 64.5-144 144 0 8 .7 15.9 1.9 23.5C73 282.7 32 336.6 32 400z"
           />
         </Svg>
-        <Text style={style.title}>Weather</Text>
+        <Text style={style.title}>{title}</Text>
       </View>
       <Svg style={style.icon} viewBox="0 0 640 640">
         <Path

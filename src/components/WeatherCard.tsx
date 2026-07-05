@@ -1,6 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
-import LinearGradient from 'react-native-linear-gradient';
 type WeatherCardProps = {
   city: string;
   country: string;

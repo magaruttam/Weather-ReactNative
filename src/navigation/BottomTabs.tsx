@@ -12,7 +12,10 @@ import Search from '../screens/Search';
 const Stack = createStackNavigator();
 const BottomTabs = () => {
     return (
-        <Stack.Navigator>
+        <Stack.Navigator
+         screenOptions={{
+    headerShown: false,
+  }}>
             <Stack.Screen name="Home" component={Home} />
             <Stack.Screen name="Forecast" component={Forecast} />
             <Stack.Screen name="Search" component={Search} />

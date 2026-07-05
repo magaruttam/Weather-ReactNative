@@ -1,15 +1,17 @@
 import { View, Text, TouchableOpacity } from 'react-native';
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import MaterialCommunityIcons from '@react-native-vector-icons/material-design-icons';
+import MaterialCommunityIcons from '@react-native-vector-icons/material-design-icons'
 import { useNavigation } from '@react-navigation/native';
 
 
-const navigation = useNavigation();
+
 const BottomNav = () => {
+    const navigation = useNavigation();
     return (
         <View style={styles.container}>
             <View style={styles.iconsection}>
+                <TouchableOpacity onPress={() => navigation.navigate('Home')}>
                 <MaterialCommunityIcons
                     name="home"
                     size={30}
@@ -17,6 +19,7 @@ const BottomNav = () => {
                     style={styles.icon}
                 />
                 <Text style={styles.icontext}>Home</Text>
+                </TouchableOpacity>
             </View>
             <View>
                 <MaterialCommunityIcons
@@ -27,16 +30,15 @@ const BottomNav = () => {
                 />
                 <Text style={styles.icontext}>Forecast</Text>
             </View>
-            <View>
+            <TouchableOpacity onPress={() => navigation.navigate('Search')}>
                 <MaterialCommunityIcons
                     name="magnify"
                     size={30}
                     color="#C5C5D7"
                     style={styles.icon}
                 />
-                <TouchableOpacity onPress={() => navigation.navigate('Search')}> <Text style={styles.icontext}>Search</Text></TouchableOpacity>
-
-            </View>
+                <Text style={styles.icontext}>Search</Text>
+            </TouchableOpacity>
             <View>
                 <MaterialCommunityIcons
                     name="cog"
@@ -54,7 +56,6 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         justifyContent: 'space-around',
-        marginTop: 10,
     },
     icon: {
         alignSelf: 'center',

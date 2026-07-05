@@ -55,7 +55,7 @@ const style = StyleSheet.create({
         color: '#C5C5D7',
         fontWeight: 'bold',
         fontSize: 12,
-        marginBottom: 16,
+        // marginBottom: 16,
     },
     row: {
         marginBottom: 8,
