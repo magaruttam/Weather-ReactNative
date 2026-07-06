@@ -46,7 +46,7 @@ const DailyForecast = ({ data }: DailyForecastProps) => {
     highTemp: `${Math.round(daily.temperature_2m_max[i])}°`,
     lowTemp: `${Math.round(daily.temperature_2m_min[i])}°`,
   }));
-
+  console.log(days)
   return (
     <View style={styles.container}>
       <FlatList

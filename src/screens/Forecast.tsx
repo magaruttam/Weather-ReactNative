@@ -9,9 +9,17 @@ import HourlyForecast from '../components/HourlyForecast';
 import DailyForecast from '../components/DailyForecast';
 import { weatherStore } from '../store/WeatherStore';
 import { useState } from 'react';
+import { User } from '../store/UserStore';
 
 const Forecast = observer(() => {
   const [activeTab, setActiveTab] = useState('hourly');
+  const user = User.create({name: "John",age: 24});
+  console.log(user.name)
+  console.log(user.fullName)
+  user.setName("Himal");
+  console.log(user.name)
+  console.log(user.fullName)
+  
 
   useEffect(() => {
     if (!weatherStore.weather) {
