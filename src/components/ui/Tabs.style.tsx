@@ -3,17 +3,17 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    backgroundColor: '#E8E8E8',
-    borderRadius: 10,
-    padding: 4,
+    backgroundColor: '#1E2035',
+    borderRadius: 50,
+    padding: 5,
   },
 
   tab: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 12,
-    borderRadius: 8,
+    paddingVertical: 13,
+    borderRadius: 50,
   },
 
   activeTab: {
@@ -21,13 +21,15 @@ const styles = StyleSheet.create({
   },
 
   text: {
-    color: '#666',
-    fontSize: 16,
-    fontWeight: '500',
+    color: '#9B9BB5',
+    fontSize: 14,
+    fontWeight: '600',
+    letterSpacing: 0.5,
+    textTransform: 'uppercase',
   },
 
   activeText: {
-    color: '#FFF',
+    color: '#FFFFFF',
     fontWeight: '700',
   },
 });
